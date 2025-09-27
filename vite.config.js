@@ -15,7 +15,7 @@ export default defineConfig({
       brotliSize: true,
     })
   ],
-  base: '/',
+  base: '/SGPA-Calculator/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
