@@ -8,7 +8,7 @@ lerna-debug.log*
 .npm
 .yarn
 .pnpm-store
-package-lock.json
+# package-lock.json - REMOVED: GitHub Actions needs this for caching
 yarn.lock
 pnpm-lock.yaml
 
