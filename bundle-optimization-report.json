@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-09-24T19:47:48.435Z",
+  "projectName": "sgpacal",
+  "totalDependencies": 23,
+  "nodeModulesPackages": 317,
+  "optimizations": [
+    "Moved dev dependencies to devDependencies section",
+    "Configured advanced tree shaking",
+    "Enabled aggressive minification",
+    "Set up chunk splitting for better caching",
+    "Added compression plugins"
+  ],
+  "recommendedActions": [
+    "Run npm ci --only=production for deployment",
+    "Use npm run build:optimized for production builds",
+    "Consider CDN for large libraries",
+    "Regular dependency audits"
+  ]
+}
