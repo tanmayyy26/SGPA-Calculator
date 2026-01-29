@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Delius+Swash+Caps&family=Funnel+Display:wght@300..800&family=Poiret+One&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+/* CSS Variables for theme colors */
+:root {
+  --font-size-base: 16px;
+  --animation-duration: 0.3s;
+}
+
+@theme{
+    --font-borel :  "Borel", "cursive";
+    --font-delius : "Delius Swash Caps", "cursive";
+    --font-winky : "Winky Sans", "sans-serif";
+    --font-funnel : "Funnel Display", "sans-serif";
+    --font-poiret : "Poiret One", "sans-serif";
+
+    --animate-fadein: fadein 2s linear 1;
+    --animate-gradient: gradient 8s linear infinite;
+    --animate-slidein: slideIn 0.5s ease-out;
+    --animate-bounce-in: bounceIn 0.8s ease-out;
+
+    @keyframes fadein {
+        0%{
+            transform: translateX(100px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0px);
+            opacity: 1;
+        }
+    }
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes bounceIn {
+        0% {
+            opacity: 0;
+            transform: scale(0.3);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        70% {
+            transform: scale(0.95);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+}
+
+/* Remove input number arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Custom input styles */
+.custom-input {
+    border: 1px solid #4b5563;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.custom-input::placeholder {
+    color: white !important;
+    font-weight: 100;
+}
+
+.custom-input:focus {
+    border-color: var(--color-primary, #3b82f6);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.custom-input:invalid {
+    border-color: #ef4444;
+}
+
+/* Glass morphism effect */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Loading spinner */
+.loading-spinner {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 3px solid var(--color-primary, #3b82f6);
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* Focus styles for accessibility */
+.focus-visible:focus {
+    outline: 2px solid var(--color-primary, #3b82f6);
+    outline-offset: 2px;
+}
+
+/* Screen reader only content */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.sr-only.focus:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* Responsive utilities */
+.w-120 {
+    width: 30rem;
+}
+
+.w-170 {
+    width: 42.5rem;
+}
+
+.w-43 {
+    width: 10.75rem;
+}
+
+.w-50 {
+    width: 12.5rem;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .custom-input {
+        border-width: 2px;
+    }
+    
+    button {
+        border-width: 2px;
+    }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .w-120 {
+        width: 95vw;
+    }
+    
+    .w-170 {
+        width: 95vw;
+    }
+}

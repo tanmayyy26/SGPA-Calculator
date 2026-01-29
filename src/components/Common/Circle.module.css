@@ -1,0 +1,31 @@
+.progress {
+  width: 200px;
+  height: 200px;
+  background-image: conic-gradient(
+    rgb(255, 0, 0) 36deg,
+    rgb(255, 255, 255) 0deg
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 50%;
+  transition: all 0.5s linear;
+}
+.progress::before {
+  content: "";
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  position: absolute;
+  background: black;
+}
+.value {
+  font-family: "Poppins";
+  font-size: 20px;
+  color: white;
+  z-index: 2;
+}
+.container {
+  margin-top: 30px;
+}
